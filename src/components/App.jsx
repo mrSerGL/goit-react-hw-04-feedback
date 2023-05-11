@@ -34,21 +34,13 @@ const App = () => {
     bad: bad,
   };
 
-  const countTotalFeedback = state => {
-    const { good, neutral, bad } = state;
-    const total = good + bad + neutral;
-    return total;
-  };
-
   const countPositiveFeedbackPercentage = () => {
-    const { good, neutral, bad } = state;
     const total = good + neutral + bad;
     const percentage = total > 0 ? Math.round((good / total) * 100) : 0;
     return percentage;
   };
 
   const positivePercentage = {
-    totalFeedback: countTotalFeedback,
     positiveFeedbackPercentage: countPositiveFeedbackPercentage,
   };
 

@@ -3,7 +3,7 @@ import css from './Statistics.module.css';
 
 function Statistics({ options, positivePercentage }) {
   const { good, neutral, bad } = options;
-  const { totalFeedback, positiveFeedbackPercentage } = positivePercentage;
+  const { positiveFeedbackPercentage } = positivePercentage;
 
   return (
     <>
@@ -11,7 +11,7 @@ function Statistics({ options, positivePercentage }) {
         <li>Good: {good}</li>
         <li>Neutral: {neutral}</li>
         <li>Bad: {bad}</li>
-        <li>Total: {totalFeedback(options)}</li>
+        <li>Total: {good+neutral+bad}</li>
         <li>Positive feedback: {positiveFeedbackPercentage(options)} %</li>
       </ul>
     </>
